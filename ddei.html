@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página Nueva</title>
+  <style>
+    /* Estilos para el menú de navegación */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000; /* Cambiado a negro */
+      color: #fff; /* Cambiado a blanco para mejor legibilidad */
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+      cursor: pointer; /* Cambiado a pointer para indicar que es clickeable */
+    }
+
+    nav ul li a:hover {
+      color: #f39c12;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      animation: slideIn 1s ease-out;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    p {
+      text-align: center; /* Centrar el texto */
+      margin-top: 20px; /* Espacio debajo de la imagen */
+    }
+
+    .contacto {
+      display: none; /* Oculto por defecto */
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .servicios {
+      display: none; /* Oculto por defecto */
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .form-control {
+      margin: 10px 0;
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .submit-button {
+      background-color: #f39c12;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background-color: #e67e22;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#inicio" onclick="scrollToTop()">Inicio</a></li>
+      <li><a href="#servicios" onclick="toggleServicios()">Servicios</a></li>
+      <li><a href="#contacto" onclick="toggleContact()">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <h1>Mi página nueva</h1>
+  <p>
+    <img src="https://pbs.twimg.com/media/GmOyN5xbYAA1zfn?format=jpg&name=medium" alt="imagen de html">
+  </p>
+  <p>Hola mundo</p> <!-- Centrado y colocado debajo de la imagen -->
+
+  <!-- Sección de servicios -->
+  <div class="servicios" id="serviciosSection">
+    <h2>Servicios</h2>
+    <form id="registrationForm">
+      <input type="text" class="form-control" id="name" placeholder="Nombre" required>
+      <input type="email" class="form-control" id="email" placeholder="Correo Electrónico" required>
+      <button type="submit" class="submit-button">Registrarse</button>
+    </form>
+    <img src="https://i.pinimg.com/originals/ca/6f/3f/ca6f3fb189eb7d7e8d02e23aef4fc933.gif" alt="GIF de servicios" style="width: 100%; max-width: 600px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0,0,0,0.2);">
+  </div>
+
+  <!-- Sección de contacto -->
+  <div class="contacto" id="contactSection">
+    <h2>Contacto</h2>
+    <p>Número de celular: +319 2147606</p>
+    <img src="https://i.pinimg.com/originals/4d/a7/a3/4da7a3c3c2c8bcf36fe381db2a96713c.gif" alt="GIF de contacto" style="width: 100%; max-width: 600px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0,0,0,0.2);">
+  </div>
+
+  <script>
+    function toggleContact() {
+      const contactSection = document.getElementById('contactSection');
+      contactSection.style.display = contactSection.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleServicios() {
+      const serviciosSection = document.getElementById('serviciosSection');
+      serviciosSection.style.display = serviciosSection.style.display === 'none' ? 'block' : 'none';
+    }
+
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('gracias ! Registro exitoso!');
+    });
+  </script>
+</body>
+</html>
